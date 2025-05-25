@@ -1,4 +1,4 @@
-name: Enhanced Claude Export CI
+name: Enhanced Grok Export CI
 
 on:
   push:
@@ -37,9 +37,9 @@ jobs:
         
     - name: Validate userscript syntax
       run: |
-        if [ -f "enhanced-claude-export.user.js" ]; then
+        if [ -f "enhanced-grok-export.user.js" ]; then
           echo "Validating userscript JavaScript syntax..."
-          jshint enhanced-claude-export.user.js --esversion=8 --browser --undef --unused || true
+          jshint enhanced-grok-export.user.js --esversion=8 --browser --undef --unused || true
         else
           echo "⚠️ Userscript file not found, skipping syntax check"
         fi
@@ -83,7 +83,7 @@ jobs:
         
     - name: Validate userscript headers
       run: |
-        if [ -f "enhanced-claude-export.user.js" ]; then
+        if [ -f "enhanced-grok-export.user.js" ]; then
           echo "Validating userscript metadata headers..."
           
           # Check for required userscript headers
@@ -91,7 +91,7 @@ jobs:
           missing_headers=()
           
           for header in "${required_headers[@]}"; do
-            if ! grep -q "// $header" enhanced-claude-export.user.js; then
+            if ! grep -q "// $header" enhanced-grok-export.user.js; then
               missing_headers+=("$header")
             fi
           done
@@ -104,7 +104,7 @@ jobs:
           fi
           
           # Extract and display version
-          version=$(grep "// @version" enhanced-claude-export.user.js | head -1 | sed 's/.*@version\s*//')
+          version=$(grep "// @version" enhanced-grok-export.user.js | head -1 | sed 's/.*@version\s*//')
           echo "📦 Userscript version: $version"
         fi
         
@@ -113,20 +113,20 @@ jobs:
         echo "Running basic security checks..."
         
         # Check for potential security issues
-        if [ -f "enhanced-claude-export.user.js" ]; then
+        if [ -f "enhanced-grok-export.user.js" ]; then
           echo "Checking for potential security issues..."
           
           # Check for dangerous functions
           dangerous_patterns=("eval(" "innerHTML" "document.write" "setTimeout.*string" "setInterval.*string")
           
           for pattern in "${dangerous_patterns[@]}"; do
-            if grep -q "$pattern" enhanced-claude-export.user.js; then
+            if grep -q "$pattern" enhanced-grok-export.user.js; then
               echo "⚠️ Potential security issue found: $pattern"
             fi
           done
           
           # Check for hardcoded credentials
-          if grep -iE "(password|secret|key|token).*=" enhanced-claude-export.user.js; then
+          if grep -iE "(password|secret|key|token).*=" enhanced-grok-export.user.js; then
             echo "⚠️ Potential hardcoded credentials found"
           fi
           
@@ -141,9 +141,9 @@ jobs:
         echo "- JavaScript files: $(find . -name "*.js" -not -path "./.git/*" | wc -l)"
         echo "- JSON files: $(find . -name "*.json" -not -path "./.git/*" | wc -l)"
         
-        if [ -f "enhanced-claude-export.user.js" ]; then
-          echo "- Userscript size: $(wc -c < enhanced-claude-export.user.js) bytes"
-          echo "- Userscript lines: $(wc -l < enhanced-claude-export.user.js) lines"
+        if [ -f "enhanced-grok-export.user.js" ]; then
+          echo "- Userscript size: $(wc -c < enhanced-grok-export.user.js) bytes"
+          echo "- Userscript lines: $(wc -l < enhanced-grok-export.user.js) lines"
         fi
         
   release-check:
@@ -160,8 +160,8 @@ jobs:
         echo "🚀 Checking release readiness..."
         
         # Check version consistency
-        if [ -f "enhanced-claude-export.user.js" ]; then
-          script_version=$(grep "// @version" enhanced-claude-export.user.js | head -1 | sed 's/.*@version\s*//')
+        if [ -f "enhanced-grok-export.user.js" ]; then
+          script_version=$(grep "// @version" enhanced-grok-export.user.js | head -1 | sed 's/.*@version\s*//')
           
           if [ -f "CHANGELOG.md" ]; then
             changelog_version=$(grep -m1 "## \[" CHANGELOG.md | sed 's/.*\[\(.*\)\].*/\1/')
