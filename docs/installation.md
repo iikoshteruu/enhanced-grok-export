@@ -1,17 +1,17 @@
 # Installation Guide
 
-This guide provides detailed installation instructions for the Enhanced Claude Export Script across different browsers and userscript managers.
+This guide provides detailed installation instructions for the Enhanced grok Export Script across different browsers and userscript managers.
 
 ## 🚀 Quick Installation
 
 ### Method 1: Direct Install (Recommended)
 1. **Install a userscript manager** (see detailed instructions below)
-2. **Click this link**: [Install Enhanced Claude Export](https://github.com/iikoshteruu/enhanced-claude-export/raw/main/enhanced-claude-export.user.js)
+2. **Click this link**: [Install Enhanced grok Export](https://github.com/iikoshteruu/enhanced-grok-export/raw/main/enhanced-grok-export.user.js)
 3. **Confirm installation** in your userscript manager
-4. **Visit Claude.ai** and start using the export feature
+4. **Visit grok.com** and start using the export feature
 
 ### Method 2: Manual Installation
-1. Download the script file: [`enhanced-claude-export.user.js`](https://github.com/iikoshteruu/enhanced-claude-export/raw/main/enhanced-claude-export.user.js)
+1. Download the script file: [`enhanced-grok-export.user.js`](https://github.com/iikoshteruu/enhanced-grok-export/raw/main/enhanced-grok-export.user.js)
 2. Open your userscript manager dashboard
 3. Create new script or import file
 4. Paste the code and save
@@ -77,7 +77,7 @@ This guide provides detailed installation instructions for the Enhanced Claude E
 
 After installation, verify the script is working:
 
-1. **Visit Claude.ai** and start a conversation
+1. **Visit grok.com** and start a conversation
 2. **Look for the export button** in the bottom-right corner (📥 Export Full)
 3. **Test export functionality** by clicking the button
 4. **Check the dropdown menu** shows three format options
@@ -87,14 +87,14 @@ After installation, verify the script is working:
 **Script not appearing:**
 - Check if userscript manager is enabled
 - Verify the script is active in your manager
-- Refresh Claude.ai page
+- Refresh grok.com page
 - Check browser console for errors
 
 **Export button missing:**
-- Ensure you're on a Claude.ai conversation page
+- Ensure you're on a grok.com conversation page
 - Try scrolling or interacting with the page
 - Disable other userscripts temporarily
-- Check if Claude.ai updated their interface
+- Check if grok.com updated their interface
 
 ## ⚙️ Configuration
 
@@ -141,14 +141,14 @@ const formats = [
 If installed from the GitHub raw link, the script will automatically check for updates through your userscript manager.
 
 ### Manual Updates
-1. Visit the [latest release](https://github.com/iikoshteruu/enhanced-claude-export/raw/main/enhanced-claude-export.user.js)
+1. Visit the [latest release](https://github.com/iikoshteruu/enhanced-grok-export/raw/main/enhanced-grok-export.user.js)
 2. Your userscript manager will detect the update
 3. Confirm the update installation
 
 ### Version Checking
 Check your current version:
 1. Open your userscript manager
-2. Find "Enhanced Claude Export" in the list
+2. Find "Enhanced grok Export" in the list
 3. Version number is displayed in the script details
 
 ## 🛡️ Security Notes
@@ -156,20 +156,20 @@ Check your current version:
 - **Local Processing**: All data processing happens in your browser
 - **No External Servers**: Script doesn't send data anywhere
 - **Open Source**: Full source code is available for review
-- **Minimal Permissions**: Only requires access to Claude.ai
+- **Minimal Permissions**: Only requires access to grok.com
 
 ## 📞 Support
 
 If you encounter issues during installation:
 
 1. **Check the troubleshooting section** above
-2. **Search existing issues** on [GitHub Issues](https://github.com/iikoshteruu/enhanced-claude-export/issues)
+2. **Search existing issues** on [GitHub Issues](https://github.com/iikoshteruu/enhanced-grok-export/issues)
 3. **Create a new issue** with your browser and userscript manager details
 4. **Include console output** if available (F12 → Console)
 
 ## 🔗 Related Links
 
-- [Main Repository](https://github.com/iikoshteruu/enhanced-claude-export)
+- [Main Repository](https://github.com/iikoshteruu/enhanced-grok-export)
 - [Usage Guide](usage.md)
 - [Troubleshooting](troubleshooting.md)
 - [Changelog](../CHANGELOG.md)
