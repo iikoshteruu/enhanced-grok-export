@@ -1,17 +1,17 @@
-# Contributing to Enhanced Claude Export
+# Contributing to Enhanced Grok Export
 
-Thank you for your interest in contributing to the Enhanced Claude Export Script! This document provides guidelines and information for contributors.
+Thank you for your interest in contributing to the Enhanced Grok Export Script! This document provides guidelines and information for contributors.
 
 ## 🚀 How to Contribute
 
 ### Reporting Bugs
-1. Check existing [issues](https://github.com/iikoshteruu/enhanced-claude-export/issues) first
+1. Check existing [issues](https://github.com/iikoshteruu/enhanced-Grok-export/issues) first
 2. Use the bug report template when creating new issues
-3. Include your browser, userscript manager, and Claude.ai URL
+3. Include your browser, userscript manager, and grok.com URL
 4. Provide steps to reproduce the problem
 
 ### Suggesting Features
-1. Check existing feature requests in [issues](https://github.com/iikoshteruu/enhanced-claude-export/issues)
+1. Check existing feature requests in [issues](https://github.com/iikoshteruu/enhanced-Grok-export/issues)
 2. Use the feature request template
 3. Explain the use case and expected behavior
 4. Consider backward compatibility
@@ -27,7 +27,7 @@ Thank you for your interest in contributing to the Enhanced Claude Export Script
 
 ### Prerequisites
 - A userscript manager (Tampermonkey, Greasemonkey, etc.)
-- Access to Claude.ai
+- Access to grok.com
 - Basic JavaScript knowledge
 
 ### Testing Your Changes
@@ -53,7 +53,7 @@ Thank you for your interest in contributing to the Enhanced Claude Export Script
 - **UI Improvements**: Better visual design, animations, accessibility
 - **Export Formats**: Additional formats (PDF, CSV, etc.)
 - **Performance**: Optimization for very long conversations
-- **Compatibility**: Support for Claude.ai UI changes
+- **Compatibility**: Support for grok.com UI changes
 
 ### Medium Impact
 - **Features**: Custom export templates, filtering options
@@ -73,7 +73,7 @@ When reporting bugs, please include:
 **Environment:**
 - Browser: Chrome 91.0.4472.124
 - Userscript Manager: Tampermonkey 4.13
-- Claude.ai URL: https://claude.ai/chat/...
+- grok.com URL: https://grok.com/chat/...
 
 **Expected Behavior:**
 What you expected to happen
@@ -82,7 +82,7 @@ What you expected to happen
 What actually happened
 
 **Steps to Reproduce:**
-1. Go to Claude.ai
+1. Go to grok.com
 2. Start a conversation
 3. Click export...
 
@@ -121,7 +121,7 @@ Help improve documentation by:
 ## 🎨 UI/UX Contributions
 
 When improving the user interface:
-- Maintain compatibility with Claude.ai's design
+- Maintain compatibility with grok.com's design
 - Ensure accessibility (contrast, keyboard navigation)
 - Test on different screen sizes
 - Consider user workflow and efficiency
@@ -146,7 +146,7 @@ Contributors will be:
 
 ## 📞 Getting Help
 
-- Open an [issue](https://github.com/iikoshteruu/enhanced-claude-export/issues) for questions
+- Open an [issue](https://github.com/iikoshteruu/enhanced-Grok-export/issues) for questions
 - Tag maintainers (@iikoshteruu) for urgent matters
 - Be patient and respectful in all interactions
 
@@ -174,4 +174,4 @@ Future planned features:
 
 ---
 
-Thank you for contributing to Enhanced Claude Export! 🚀
+Thank you for contributing to Enhanced Grok Export! 🚀
