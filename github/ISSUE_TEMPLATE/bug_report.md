@@ -11,7 +11,7 @@ A clear and concise description of what the bug is.
 
 ## 🔄 Steps to Reproduce
 Steps to reproduce the behavior:
-1. Go to grok.com
+1. Go to x.com/i/grok
 2. Start a conversation with '...'
 3. Click on Export button
 4. Select format '...'
@@ -55,7 +55,7 @@ If the export fails:
 Add any other context about the problem here:
 - Does this happen with all conversations or specific ones?
 - Did this work before and recently break?
-- Any recent grok.com interface changes you noticed?
+- Any recent x.com/i/grok interface changes you noticed?
 - Other userscripts that might interfere?
 
 ## 🎯 Workaround
