@@ -18,7 +18,7 @@ This guide helps resolve common issues with Enhanced Grok Export. Follow the ste
 ### 1. Export Button Not Appearing
 
 **Symptoms:**
-- No export button visible on Grok.com
+- No export button visible on x.com/i/grok
 - Button appears then disappears
 - Button only shows on some pages
 
@@ -28,15 +28,15 @@ This guide helps resolve common issues with Enhanced Grok Export. Follow the ste
 ```
 1. Open your userscript manager (Tampermonkey/Greasemonkey)
 2. Verify "Enhanced Grok Export" is installed and enabled
-3. Check that it's set to run on Grok.com
+3. Check that it's set to run on x.com/i/grok
 4. Look for any error indicators (red icons)
 ```
 
 **Step 2: Verify URL Match**
 ```
-1. Ensure you're on a Grok.com conversation page
-2. URL should be: https://Grok.com/chat/[conversation-id]
-3. Script doesn't run on Grok.com homepage or settings pages
+1. Ensure you're on a x.com/i/grok conversation page
+2. URL should be: https://x.com/i/grok/chat/[conversation-id]
+3. Script doesn't run on x.com/i/grok homepage or settings pages
 4. Try refreshing the page after navigating to a conversation
 ```
 
@@ -50,7 +50,7 @@ This guide helps resolve common issues with Enhanced Grok Export. Follow the ste
 
 **Step 4: Clear Browser Cache**
 ```
-1. Clear browser cache and cookies for grok.com
+1. Clear browser cache and cookies for x.com/i/grok
 2. Disable other browser extensions temporarily
 3. Try in incognito/private browsing mode
 4. Restart browser and try again
@@ -110,7 +110,7 @@ button.style.color = '#333333 !important';
 ```
 1. Scroll to top of conversation manually
 2. Scroll slowly to bottom, waiting for messages to load
-3. Look for "loading" indicators in grok.com interface
+3. Look for "loading" indicators in x.com/i/grok interface
 4. Try refreshing page if conversation seems incomplete
 ```
 
@@ -130,7 +130,7 @@ button.style.color = '#333333 !important';
 4. Different formats use slightly different detection methods
 ```
 
-### 4. grok.com Interface Changes
+### 4. x.com/i/grok Interface Changes
 
 **Symptoms:**
 - Script worked before but stopped working
@@ -149,7 +149,7 @@ button.style.color = '#333333 !important';
 
 **Step 2: Report Interface Changes**
 ```
-1. Take screenshot of current grok.com interface
+1. Take screenshot of current x.com/i/grok interface
 2. Note what changed (button locations, element styling, etc.)
 3. Create GitHub issue with details
 4. Include browser and script version information
@@ -224,9 +224,9 @@ CONFIG.maxScrollAttempts = 30;  // Reduce maximum scroll attempts
 
 **Step 2: Browser Permission Issues**
 ```
-1. Grant file download permissions to grok.com
-2. Add grok.com to trusted sites list
-3. Disable popup blockers for grok.com
+1. Grant file download permissions to x.com/i/grok
+2. Add x.com/i/grok to trusted sites list
+3. Disable popup blockers for x.com/i/grok
 4. Try in incognito mode to bypass restrictions
 ```
 
@@ -246,7 +246,7 @@ CONFIG.maxScrollAttempts = 30;  // Reduce maximum scroll attempts
 - Solution: Conversation not fully loaded, try manual scrolling first
 
 **"Failed to execute 'click' on 'HTMLElement'"**
-- Solution: grok.com UI changed, check for script updates
+- Solution: x.com/i/grok UI changed, check for script updates
 
 **"Script error: Network timeout"**
 - Solution: Slow internet connection, increase timeout values
@@ -275,7 +275,7 @@ const CONFIG = {
 ### Script Conflicts
 
 **Other Userscripts:**
-1. Disable other grok.com related scripts temporarily
+1. Disable other x.com/i/grok related scripts temporarily
 2. Check for CSS/JavaScript conflicts
 3. Test with only Enhanced Grok Export enabled
 4. Report specific script conflicts as GitHub issues
@@ -295,7 +295,7 @@ const CONFIG = {
 - Browser name and version
 - Userscript manager and version
 - Script version
-- grok.com URL where issue occurs
+- x.com/i/grok URL where issue occurs
 - Console error messages (if any)
 - Steps to reproduce the problem
 - Screenshots of the issue
@@ -322,7 +322,7 @@ const CONFIG = {
 Brief description of the issue
 
 **Steps to Reproduce:**
-1. Go to grok.com
+1. Go to x.com/i/grok
 2. Start conversation about [topic]
 3. Click export button
 4. Select [format]
@@ -357,7 +357,7 @@ Actual: Nothing happens, no error message
 
 ### Backup Important Conversations
 - Export conversations regularly
-- Don't rely solely on grok.com storage
+- Don't rely solely on x.com/i/grok storage
 - Organize exports in dated folders
 - Test exports periodically to ensure they work
 
