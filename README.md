@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Greasyfork](https://img.shields.io/badge/install-greasyfork-red.svg)](https://greasyfork.org/scripts/YOUR_SCRIPT_ID)
 
-The first comprehensive open-source userscript for exporting Grok.ai conversations with multi-format support, mode preservation, and multimodal content handling.
+The first comprehensive open-source userscript for exporting x.com/i/grok conversations with multi-format support, mode preservation, and multimodal content handling.
 
 ## 🚀 Features
 
@@ -180,7 +180,7 @@ Found a bug or want to add a feature? Contributions are welcome!
 
 - **Enhanced Version**: [iikoshteruu](https://github.com/iikoshteruu)
 - **Inspired by**: Enhanced Claude Export success
-- **Built for**: The growing Grok.ai community
+- **Built for**: The growing x.com/i/grok community
 
 ## 📄 License
 
@@ -188,10 +188,10 @@ MIT License - feel free to modify and distribute!
 
 ## 🔗 Links
 
-- [Grok.ai](https://grok.com)
+- [x.com/i/grok](https://grok.com)
 - [X.com Grok](https://x.com/grok)
 - [Userscript Managers Guide](https://openuserjs.org/about/Userscript-Beginners-HOWTO)
 
 ---
 
-*Made with 🤖 for the Grok.ai community*
+*Made with ❤️ for the x.com/i/grok community*
