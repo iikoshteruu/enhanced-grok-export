@@ -22,7 +22,10 @@ A powerful userscript that allows you to export your Claude.ai conversations in 
 ## 📸 Screenshots
 
 ### Export Menu
-![Export Menu](examples/screenshots/export-menu-screenshot-2.png)
+![Export Menu](examples/screenshots/export-menu-screenshot_1.png)
+*Small, discrete button*
+
+![Export Menu](examples/screenshots/export-menu-screenshot_2.png)
 *Clean, intuitive interface with multiple format options*
 
 ### Sample Output
