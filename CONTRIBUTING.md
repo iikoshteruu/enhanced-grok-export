@@ -7,7 +7,7 @@ Thank you for your interest in contributing to the Enhanced Grok Export Script! 
 ### Reporting Bugs
 1. Check existing [issues](https://github.com/iikoshteruu/enhanced-Grok-export/issues) first
 2. Use the bug report template when creating new issues
-3. Include your browser, userscript manager, and grok.com URL
+3. Include your browser, userscript manager, and x.com/i/grok URL
 4. Provide steps to reproduce the problem
 
 ### Suggesting Features
@@ -27,7 +27,7 @@ Thank you for your interest in contributing to the Enhanced Grok Export Script! 
 
 ### Prerequisites
 - A userscript manager (Tampermonkey, Greasemonkey, etc.)
-- Access to grok.com
+- Access to x.com/i/grok
 - Basic JavaScript knowledge
 
 ### Testing Your Changes
@@ -53,7 +53,7 @@ Thank you for your interest in contributing to the Enhanced Grok Export Script! 
 - **UI Improvements**: Better visual design, animations, accessibility
 - **Export Formats**: Additional formats (PDF, CSV, etc.)
 - **Performance**: Optimization for very long conversations
-- **Compatibility**: Support for grok.com UI changes
+- **Compatibility**: Support for x.com/i/grok UI changes
 
 ### Medium Impact
 - **Features**: Custom export templates, filtering options
@@ -73,7 +73,7 @@ When reporting bugs, please include:
 **Environment:**
 - Browser: Chrome 91.0.4472.124
 - Userscript Manager: Tampermonkey 4.13
-- grok.com URL: https://grok.com/chat/...
+- x.com/i/grok URL: https://x.com/i/grok/chat/...
 
 **Expected Behavior:**
 What you expected to happen
@@ -82,7 +82,7 @@ What you expected to happen
 What actually happened
 
 **Steps to Reproduce:**
-1. Go to grok.com
+1. Go to x.com/i/grok
 2. Start a conversation
 3. Click export...
 
@@ -121,7 +121,7 @@ Help improve documentation by:
 ## 🎨 UI/UX Contributions
 
 When improving the user interface:
-- Maintain compatibility with grok.com's design
+- Maintain compatibility with x.com/i/grok's design
 - Ensure accessibility (contrast, keyboard navigation)
 - Test on different screen sizes
 - Consider user workflow and efficiency
@@ -167,7 +167,6 @@ Contributors will be:
 
 Future planned features:
 - **Advanced Filtering**: Export specific date ranges or topics
-- **Batch Export**: Export multiple conversations at once
 - **Cloud Storage**: Direct export to Google Drive, Dropbox
 - **Templates**: Customizable export templates
 - **Analytics**: Conversation statistics and insights
