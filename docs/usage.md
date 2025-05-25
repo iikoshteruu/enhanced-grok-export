@@ -1,11 +1,11 @@
 # Usage Guide
 
-Learn how to effectively use Enhanced Claude Export to backup, share, and organize your Claude.ai conversations.
+Learn how to effectively use Enhanced Grok Export to backup, share, and organize your grok.com conversations.
 
 ## 🎯 Basic Usage
 
 ### Quick Export
-1. **Start a conversation** with Claude.ai
+1. **Start a conversation** with grok.com
 2. **Click the Export button** (📥 Export Full) in bottom-right corner
 3. **Choose format**: Markdown, Plain Text, or JSON
 4. **Download automatically** begins with timestamped filename
@@ -14,7 +14,7 @@ Learn how to effectively use Enhanced Claude Export to backup, share, and organi
 The script automatically:
 - **Loads full conversation** using auto-scroll technology
 - **Cleans formatting** by removing UI elements
-- **Identifies speakers** (Human vs Claude)
+- **Identifies speakers** (Human vs Grok)
 - **Adds metadata** including timestamps and statistics
 - **Generates filename** with message count and timestamp
 
@@ -30,7 +30,7 @@ The script automatically:
 - Lists and formatting intact
 - GitHub-compatible rendering
 
-**Example filename**: `claude-FULL-conversation-156msgs-2025-05-26T14-30-45.md`
+**Example filename**: `Grok-FULL-conversation-156msgs-2025-05-26T14-30-45.md`
 
 **Use cases**:
 - Creating study notes
@@ -48,7 +48,7 @@ The script automatically:
 - Lightweight file size
 - Easy copy/paste
 
-**Example filename**: `claude-FULL-conversation-156msgs-2025-05-26T14-30-45.txt`
+**Example filename**: `Grok-FULL-conversation-156msgs-2025-05-26T14-30-45.txt`
 
 **Use cases**:
 - Email attachments
@@ -66,7 +66,7 @@ The script automatically:
 - Timestamp information
 - Conversation statistics
 
-**Example filename**: `claude-FULL-conversation-156msgs-2025-05-26T14-30-45.json`
+**Example filename**: `Grok-FULL-conversation-156msgs-2025-05-26T14-30-45.json`
 
 **Use cases**:
 - Data analysis projects
@@ -99,7 +99,7 @@ Advanced algorithms identify message speakers:
 - Conversation starters
 - Request patterns
 
-**Claude indicators**:
+**Grok indicators**:
 - Code blocks
 - Long explanations
 - Technical content
@@ -143,7 +143,7 @@ Enable detailed logging for troubleshooting:
 
 ### Academic Research Workflow
 ```
-1. Conduct research conversations with Claude
+1. Conduct research conversations with Grok
 2. Export in Markdown format after each session
 3. Organize exports by research topic
 4. Compile into literature review documents
@@ -152,7 +152,7 @@ Enable detailed logging for troubleshooting:
 
 ### Software Development Workflow
 ```
-1. Debug issues with Claude's help
+1. Debug issues with Grok's help
 2. Export technical discussions in Markdown
 3. Add to project documentation
 4. Share solutions with team members
@@ -161,7 +161,7 @@ Enable detailed logging for troubleshooting:
 
 ### Learning and Education Workflow
 ```
-1. Ask Claude questions during study sessions
+1. Ask Grok questions during study sessions
 2. Export explanations in Markdown format
 3. Create topic-based study folders
 4. Review conversations before exams
@@ -176,12 +176,12 @@ Files are automatically named with:
 - **Timestamp**: Precise timing for organization
 - **Format identifier**: Easy format recognition
 
-Example: `claude-FULL-conversation-89msgs-2025-05-26T09-15-30.md`
+Example: `Grok-FULL-conversation-89msgs-2025-05-26T09-15-30.md`
 
 ### Folder Organization
 Suggested folder structure:
 ```
-Claude Exports/
+Grok Exports/
 ├── 2025-05/
 │   ├── Programming/
 │   ├── Research/
