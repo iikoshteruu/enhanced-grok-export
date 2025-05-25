@@ -2,8 +2,8 @@
 
 **Exported:** 5/26/2025, 3:30:31 AM  
 **Total Messages:** 8  
-**URL:** https://x.com/i/grok/chat/example-chat-id  
-**Export Method:** Enhanced Auto-Scroll v2.0
+**URL:** https://x.com/i/grok?conversation/example-chat-id  
+**Export Method:** Enhanced Auto-Scroll v1.0.0
 
 ---
 
