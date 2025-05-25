@@ -1,11 +1,11 @@
 # Usage Guide
 
-Learn how to effectively use Enhanced Grok Export to backup, share, and organize your grok.com conversations.
+Learn how to effectively use Enhanced Grok Export to backup, share, and organize your x.com/i/grok conversations.
 
 ## 🎯 Basic Usage
 
 ### Quick Export
-1. **Start a conversation** with grok.com
+1. **Start a conversation** with x.com/i/grok
 2. **Click the Export button** (📥 Export Full) in bottom-right corner
 3. **Choose format**: Markdown, Plain Text, or JSON
 4. **Download automatically** begins with timestamped filename
