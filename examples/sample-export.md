@@ -1,8 +1,8 @@
-# grok.com COMPLETE Conversation Export
+# x.com/i/grok COMPLETE Conversation Export
 
 **Exported:** 5/26/2025, 3:30:31 AM  
 **Total Messages:** 8  
-**URL:** https://grok.com/chat/example-chat-id  
+**URL:** https://x.com/i/grok/chat/example-chat-id  
 **Export Method:** Enhanced Auto-Scroll v2.0
 
 ---
