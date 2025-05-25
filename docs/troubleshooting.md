@@ -1,6 +1,6 @@
 # Troubleshooting Guide
 
-This guide helps resolve common issues with Enhanced Claude Export. Follow the step-by-step solutions to get your export functionality working smoothly.
+This guide helps resolve common issues with Enhanced Grok Export. Follow the step-by-step solutions to get your export functionality working smoothly.
 
 ## 🚨 Quick Diagnostics
 
@@ -18,7 +18,7 @@ This guide helps resolve common issues with Enhanced Claude Export. Follow the s
 ### 1. Export Button Not Appearing
 
 **Symptoms:**
-- No export button visible on Claude.ai
+- No export button visible on Grok.com
 - Button appears then disappears
 - Button only shows on some pages
 
@@ -27,16 +27,16 @@ This guide helps resolve common issues with Enhanced Claude Export. Follow the s
 **Step 1: Check Userscript Manager**
 ```
 1. Open your userscript manager (Tampermonkey/Greasemonkey)
-2. Verify "Enhanced Claude Export" is installed and enabled
-3. Check that it's set to run on claude.ai
+2. Verify "Enhanced Grok Export" is installed and enabled
+3. Check that it's set to run on Grok.com
 4. Look for any error indicators (red icons)
 ```
 
 **Step 2: Verify URL Match**
 ```
-1. Ensure you're on a Claude.ai conversation page
-2. URL should be: https://claude.ai/chat/[conversation-id]
-3. Script doesn't run on claude.ai homepage or settings pages
+1. Ensure you're on a Grok.com conversation page
+2. URL should be: https://Grok.com/chat/[conversation-id]
+3. Script doesn't run on Grok.com homepage or settings pages
 4. Try refreshing the page after navigating to a conversation
 ```
 
@@ -44,13 +44,13 @@ This guide helps resolve common issues with Enhanced Claude Export. Follow the s
 ```
 1. Press F12 to open Developer Tools
 2. Go to Console tab
-3. Look for errors containing "Claude Export"
+3. Look for errors containing "Grok Export"
 4. Common errors and solutions below
 ```
 
 **Step 4: Clear Browser Cache**
 ```
-1. Clear browser cache and cookies for claude.ai
+1. Clear browser cache and cookies for grok.com
 2. Disable other browser extensions temporarily
 3. Try in incognito/private browsing mode
 4. Restart browser and try again
@@ -110,7 +110,7 @@ button.style.color = '#333333 !important';
 ```
 1. Scroll to top of conversation manually
 2. Scroll slowly to bottom, waiting for messages to load
-3. Look for "loading" indicators in Claude.ai interface
+3. Look for "loading" indicators in grok.com interface
 4. Try refreshing page if conversation seems incomplete
 ```
 
@@ -130,7 +130,7 @@ button.style.color = '#333333 !important';
 4. Different formats use slightly different detection methods
 ```
 
-### 4. Claude.ai Interface Changes
+### 4. grok.com Interface Changes
 
 **Symptoms:**
 - Script worked before but stopped working
@@ -149,7 +149,7 @@ button.style.color = '#333333 !important';
 
 **Step 2: Report Interface Changes**
 ```
-1. Take screenshot of current Claude.ai interface
+1. Take screenshot of current grok.com interface
 2. Note what changed (button locations, element styling, etc.)
 3. Create GitHub issue with details
 4. Include browser and script version information
@@ -224,9 +224,9 @@ CONFIG.maxScrollAttempts = 30;  // Reduce maximum scroll attempts
 
 **Step 2: Browser Permission Issues**
 ```
-1. Grant file download permissions to claude.ai
-2. Add claude.ai to trusted sites list
-3. Disable popup blockers for claude.ai
+1. Grant file download permissions to grok.com
+2. Add grok.com to trusted sites list
+3. Disable popup blockers for grok.com
 4. Try in incognito mode to bypass restrictions
 ```
 
@@ -246,7 +246,7 @@ CONFIG.maxScrollAttempts = 30;  // Reduce maximum scroll attempts
 - Solution: Conversation not fully loaded, try manual scrolling first
 
 **"Failed to execute 'click' on 'HTMLElement'"**
-- Solution: Claude.ai UI changed, check for script updates
+- Solution: grok.com UI changed, check for script updates
 
 **"Script error: Network timeout"**
 - Solution: Slow internet connection, increase timeout values
@@ -275,9 +275,9 @@ const CONFIG = {
 ### Script Conflicts
 
 **Other Userscripts:**
-1. Disable other Claude.ai related scripts temporarily
+1. Disable other grok.com related scripts temporarily
 2. Check for CSS/JavaScript conflicts
-3. Test with only Enhanced Claude Export enabled
+3. Test with only Enhanced Grok Export enabled
 4. Report specific script conflicts as GitHub issues
 
 **Browser Extensions:**
@@ -295,7 +295,7 @@ const CONFIG = {
 - Browser name and version
 - Userscript manager and version
 - Script version
-- Claude.ai URL where issue occurs
+- grok.com URL where issue occurs
 - Console error messages (if any)
 - Steps to reproduce the problem
 - Screenshots of the issue
@@ -303,7 +303,7 @@ const CONFIG = {
 
 ### Where to Get Help
 
-1. **GitHub Issues**: [Report bugs and request features](https://github.com/iikoshteruu/enhanced-claude-export/issues)
+1. **GitHub Issues**: [Report bugs and request features](https://github.com/iikoshteruu/enhanced-Grok-export/issues)
 2. **Documentation**: Check other docs in this folder
 3. **Community**: Search existing issues for solutions
 4. **Updates**: Follow repository for announcements
@@ -315,14 +315,14 @@ const CONFIG = {
 **Environment:**
 - Browser: Chrome 120.0.6099.129
 - Userscript Manager: Tampermonkey 5.0.1
-- Script Version: 2.1.0
+- Script Version: 1.0.0
 - OS: Windows 11
 
 **Problem:**
 Brief description of the issue
 
 **Steps to Reproduce:**
-1. Go to claude.ai
+1. Go to grok.com
 2. Start conversation about [topic]
 3. Click export button
 4. Select [format]
@@ -357,10 +357,10 @@ Actual: Nothing happens, no error message
 
 ### Backup Important Conversations
 - Export conversations regularly
-- Don't rely solely on Claude.ai storage
+- Don't rely solely on grok.com storage
 - Organize exports in dated folders
 - Test exports periodically to ensure they work
 
 ---
 
-**Still having issues?** Create a [GitHub issue](https://github.com/iikoshteruu/enhanced-claude-export/issues) with detailed information about your problem.
+**Still having issues?** Create a [GitHub issue](https://github.com/iikoshteruu/enhanced-grok-export/issues) with detailed information about your problem.
