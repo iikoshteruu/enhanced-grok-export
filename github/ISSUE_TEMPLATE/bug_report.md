@@ -1,72 +1,62 @@
 ---
-name: Feature request
-about: Suggest an idea for the Enhanced Claude Export Script
-title: '[FEATURE] '
-labels: ['enhancement']
+name: Bug report
+about: Create a report to help us improve the Enhanced Claude Export Script
+title: '[BUG] '
+labels: ['bug']
 assignees: ''
 ---
 
-## 🚀 Feature Summary
-A clear and concise description of the feature you'd like to see added.
+## 🐛 Bug Description
+A clear and concise description of what the bug is.
 
-## 🎯 Problem Statement
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+## 🔄 Steps to Reproduce
+Steps to reproduce the behavior:
+1. Go to Claude.ai
+2. Start a conversation with '...'
+3. Click on Export button
+4. Select format '...'
+5. See error
 
-## 💡 Proposed Solution
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+## ✅ Expected Behavior
+A clear and concise description of what you expected to happen.
 
-## 🔄 User Experience
-**How would users interact with this feature?**
-Describe the user workflow:
-1. User clicks...
-2. Menu shows...
-3. User selects...
-4. Result is...
+## ❌ Actual Behavior
+A clear and concise description of what actually happened.
 
-## 🎨 UI/UX Mockup
-If applicable, describe or sketch how this feature would look:
-- Where would the UI elements appear?
-- What would buttons/menus look like?
-- How would it integrate with existing interface?
+## 🖥️ Environment Information
+- **Browser:** [e.g. Chrome 120.0.6099.129, Firefox 121.0]
+- **Userscript Manager:** [e.g. Tampermonkey 5.0.1, Greasemonkey 4.11]
+- **Operating System:** [e.g. Windows 11, macOS 14.2, Ubuntu 22.04]
+- **Script Version:** [e.g. v2.1.0]
 
-## 📋 Use Cases
-**When would people use this feature?**
-- Use case 1: [e.g. Researchers exporting specific conversation topics]
-- Use case 2: [e.g. Students creating study notes from tutoring sessions]
-- Use case 3: [e.g. Developers documenting code discussions]
+## 📋 Conversation Details
+- **Conversation Length:** [e.g. 25 messages, 150+ messages]
+- **Export Format Attempted:** [e.g. Markdown, Plain Text, JSON]
+- **Conversation Type:** [e.g. coding help, general chat, long technical discussion]
 
-## 🔧 Technical Considerations
-**Implementation ideas (if you have any):**
-- What export formats would this affect?
-- Would this require new UI elements?
-- Any performance considerations?
-- Backward compatibility concerns?
+## 🖼️ Screenshots
+If applicable, add screenshots to help explain your problem.
 
-## 🌟 Alternatives Considered
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+## 🔍 Console Output
+If you see any error messages in the browser console (F12 → Console), please include them here:
 
-## 📊 Priority Level
-How important is this feature to you?
-- [ ] Critical - Blocks my workflow
-- [ ] High - Would significantly improve my experience
-- [ ] Medium - Nice to have improvement
-- [ ] Low - Small enhancement
+```
+Paste console errors here
+```
 
-## 🎯 Success Criteria
-**How would we know this feature is successful?**
-- [ ] Users can easily [specific action]
-- [ ] Export time is [performance goal]
-- [ ] Feature works with [compatibility requirement]
-- [ ] Documentation is clear and complete
+## 🔧 Browser Developer Tools
+If the export fails:
+1. Open Developer Tools (F12)
+2. Go to Console tab
+3. Try the export again
+4. Copy any error messages that appear
 
 ## 📱 Additional Context
-Add any other context, screenshots, examples, or links about the feature request here.
+Add any other context about the problem here:
+- Does this happen with all conversations or specific ones?
+- Did this work before and recently break?
+- Any recent Claude.ai interface changes you noticed?
+- Other userscripts that might interfere?
 
-## 🔗 Related Issues
-Link any related issues, discussions, or pull requests:
-- Related to #[issue number]
-- Builds on #[issue number]
-- Alternative to #[issue number]
+## 🎯 Workaround
+If you found any temporary workaround, please describe it here.
