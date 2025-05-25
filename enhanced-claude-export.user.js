@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name     Enhanced Claude.Ai Export v2.1
 // @description Export Claude conversations with multiple formats, better structure, and robust element detection
-// @version  2.0
+// @version  2.1
 // @author   Original: TheAlanK & SAPIENT | Enhanced by:iikoshteruu 
 // @grant    none
 // @match    *://claude.ai/*
