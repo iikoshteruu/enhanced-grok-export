@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to the Enhanced Claude Export Script will be documented in this file.
+All notable changes to the Enhanced Grok Export Script will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -18,7 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fallback methods when primary detection fails
 
 ### Changed
-- Improved file naming: `claude-FULL-conversation-156msgs-2025-05-26.md`
+- Improved file naming: `grok-FULL-conversation-156msgs-2025-05-26.md`
 - Button text changed to "📥 Export Full" to indicate enhanced functionality
 - Better error handling and user feedback
 - Enhanced UI with improved menu design and descriptions
@@ -27,13 +27,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed conversation truncation issues
 - Resolved problems with n8n-style data processing
 - Improved text visibility in export menu (white text on dark backgrounds)
-- Better handling of Claude.ai UI changes
+- Better handling of grok.com UI changes
 
 ## [2.0.0] - 2025-05-25
 
 ### Added
 - Multiple export formats (Markdown, Plain Text, JSON)
-- Speaker identification between Human and Claude
+- Speaker identification between Human and Grok
 - Metadata inclusion (timestamps, export date, message counts)
 - Elegant dropdown menu interface
 - Hover effects and improved styling
@@ -46,7 +46,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Enhanced error handling and validation
 
 ### Fixed
-- Resolved element detection issues with Claude.ai updates
+- Resolved element detection issues with grok.com updates
 - Fixed export failures on long conversations
 - Improved text cleaning and formatting
 
@@ -75,5 +75,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Credits
 
-- **v1.1**: Original script by [TheAlanK](https://github.com/TheAlanK) & SAPIENT
-- **v2.0+**: Enhanced by [iikoshteruu](https://github.com/iikoshteruu)
+- **v1.1**: Original script by [iikoshteruu](https://github.com/iikoshteruu)
+ 
