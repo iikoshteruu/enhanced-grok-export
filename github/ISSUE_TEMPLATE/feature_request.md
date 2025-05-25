@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest an idea for the Enhanced Claude Export Script
+about: Suggest an idea for the Enhanced grok Export Script
 title: '[FEATURE] '
 labels: ['enhancement']
 assignees: ''
