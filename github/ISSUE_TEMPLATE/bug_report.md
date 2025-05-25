@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Create a report to help us improve the Enhanced Claude Export Script
+about: Create a report to help us improve the Enhanced grok Export Script
 title: '[BUG] '
 labels: ['bug']
 assignees: ''
@@ -11,7 +11,7 @@ A clear and concise description of what the bug is.
 
 ## 🔄 Steps to Reproduce
 Steps to reproduce the behavior:
-1. Go to Claude.ai
+1. Go to grok.com
 2. Start a conversation with '...'
 3. Click on Export button
 4. Select format '...'
@@ -55,7 +55,7 @@ If the export fails:
 Add any other context about the problem here:
 - Does this happen with all conversations or specific ones?
 - Did this work before and recently break?
-- Any recent Claude.ai interface changes you noticed?
+- Any recent grok.com interface changes you noticed?
 - Other userscripts that might interfere?
 
 ## 🎯 Workaround
