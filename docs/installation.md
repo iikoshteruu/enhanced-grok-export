@@ -8,7 +8,7 @@ This guide provides detailed installation instructions for the Enhanced grok Exp
 1. **Install a userscript manager** (see detailed instructions below)
 2. **Click this link**: [Install Enhanced grok Export](https://github.com/iikoshteruu/enhanced-grok-export/raw/main/enhanced-grok-export.user.js)
 3. **Confirm installation** in your userscript manager
-4. **Visit grok.com** and start using the export feature
+4. **Visit x.com/i/grok** and start using the export feature
 
 ### Method 2: Manual Installation
 1. Download the script file: [`enhanced-grok-export.user.js`](https://github.com/iikoshteruu/enhanced-grok-export/raw/main/enhanced-grok-export.user.js)
@@ -77,7 +77,7 @@ This guide provides detailed installation instructions for the Enhanced grok Exp
 
 After installation, verify the script is working:
 
-1. **Visit grok.com** and start a conversation
+1. **Visit x.com/i/grok** and start a conversation
 2. **Look for the export button** in the bottom-right corner (📥 Export Full)
 3. **Test export functionality** by clicking the button
 4. **Check the dropdown menu** shows three format options
@@ -87,14 +87,14 @@ After installation, verify the script is working:
 **Script not appearing:**
 - Check if userscript manager is enabled
 - Verify the script is active in your manager
-- Refresh grok.com page
+- Refresh x.com/i/grok page
 - Check browser console for errors
 
 **Export button missing:**
-- Ensure you're on a grok.com conversation page
+- Ensure you're on a x.com/i/grok conversation page
 - Try scrolling or interacting with the page
 - Disable other userscripts temporarily
-- Check if grok.com updated their interface
+- Check if x.com/i/grok updated their interface
 
 ## ⚙️ Configuration
 
@@ -156,7 +156,7 @@ Check your current version:
 - **Local Processing**: All data processing happens in your browser
 - **No External Servers**: Script doesn't send data anywhere
 - **Open Source**: Full source code is available for review
-- **Minimal Permissions**: Only requires access to grok.com
+- **Minimal Permissions**: Only requires access to x.com/i/grok
 
 ## 📞 Support
 
