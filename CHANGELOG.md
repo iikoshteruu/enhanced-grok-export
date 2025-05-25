@@ -3,9 +3,9 @@
 All notable changes to the Enhanced Grok Export Script will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v1.0.0.html).
 
-## [2.1.0] - 2025-05-26
+## [1.0.0] - 2025-05-26
 
 ### Added
 - Auto-scroll functionality to load complete conversations
@@ -29,7 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Improved text visibility in export menu (white text on dark backgrounds)
 - Better handling of grok.com UI changes
 
-## [2.0.0] - 2025-05-25
+## [1.0.0] - 2025-05-25
 
 ### Added
 - Multiple export formats (Markdown, Plain Text, JSON)
@@ -67,7 +67,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Version Schema
 
-**Major.Minor.Patch** (e.g., 2.1.0)
+**Major.Minor.Patch** (e.g., 1.0.0)
 
 - **Major**: Breaking changes or complete rewrites
 - **Minor**: New features, backwards compatible
