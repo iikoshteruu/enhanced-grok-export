@@ -1,53 +1,42 @@
-# Enhanced Claude.ai Export Script
+# Enhanced Grok Export
 
-[![Version](https://img.shields.io/badge/version-2.1-blue.svg)](https://github.com/iikoshteruu/enhanced-claude-export)
+[![Version](https://img.shields.io/badge/version-1.0-blue.svg)](https://github.com/iikoshteruu/enhanced-grok-export)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Greasyfork](https://img.shields.io/badge/install-greasyfork-red.svg)](https://greasyfork.org/scripts/YOUR_SCRIPT_ID)
 
-A powerful userscript that allows you to export your Claude.ai conversations in multiple formats with improved reliability and features.
+The first comprehensive open-source userscript for exporting Grok.ai conversations with multi-format support, mode preservation, and multimodal content handling.
 
 ## 🚀 Features
 
-- **Multiple Export Formats**: Choose from Markdown, Plain Text, or JSON
-- **Auto-Scroll Loading**: Automatically loads full conversation before export
-- **Smart Conversation Detection**: Robust element detection that adapts to UI changes
-- **Speaker Identification**: Distinguishes between human and Claude messages
-- **Clean Output**: Automatically removes UI elements, buttons, and icons
-- **Metadata Inclusion**: Adds timestamps, export date, and message counts
-- **User-Friendly Interface**: Elegant dropdown menu with hover effects
-- **Debug Mode**: Built-in debugging for troubleshooting
-- **Cross-Browser Compatible**: Works with all major userscript managers
-- **Mobile-Friendly**: Compact design that works on small screens
-
-## 📸 Screenshots
-
-### Export Menu
-![Export Button](examples/screenshots/export-menu-screenshot%201.png)
-*Small, discrete button*
-
-![Export Menu Open](examples/screenshots/export-menu-screenshot%202.png)
-*Clean, intuitive interface with multiple format options*
-
-### Sample Output
-![Sample Export](examples/screenshots/sample-output-screenshot.png)
-*Professional formatting with proper conversation structure*
+- **🎭 Mode-Aware Exports** - Preserves Think Mode, Fun Mode, and DeepSearch context
+- **📝 Multiple Export Formats** - Choose from Markdown, Plain Text, or JSON
+- **🔄 Auto-Scroll Loading** - Automatically loads complete conversation history
+- **🎯 Smart Detection** - Robust element detection that adapts to Grok's UI changes
+- **🤖 Speaker Identification** - Distinguishes between your messages and Grok's responses
+- **🧹 Clean Output** - Automatically removes UI elements while preserving content
+- **📊 Rich Metadata** - Includes timestamps, mode indicators, and export statistics
+- **🎨 Professional UI** - Elegant dropdown menu seamlessly integrated into Grok
+- **🖥️ Cross-Browser Compatible** - Works with all major userscript managers
 
 ## 📋 Export Formats
 
 ### Markdown (.md)
 - Perfect for documentation and note-taking
-- Includes headers and proper formatting
+- Preserves Think Mode reasoning steps
+- Includes mode indicators and formatting
 - Compatible with GitHub, Notion, and other markdown editors
 
 ### Plain Text (.txt)
 - Simple, universal format
+- Clean conversation flow with mode context
 - Easy to read and share
 - Compatible with any text editor
 
 ### JSON (.json)
-- Structured data format
-- Includes full metadata
-- Perfect for programmatic processing or backup
+- Structured data format with complete metadata
+- Includes mode statistics and conversation analysis
+- Perfect for data analysis and programmatic processing
+- Full conversation context preservation
 
 ## 🛠 Installation
 
@@ -58,51 +47,58 @@ A powerful userscript that allows you to export your Claude.ai conversations in 
 
 2. Click the userscript file or copy the code
 3. Your userscript manager will prompt you to install
-4. Visit [Claude.ai](https://claude.ai) and start chatting
+4. Visit [Grok](https://grok.com) or [X.com](https://x.com/grok) and start chatting
 
 ## 🎯 Usage
 
-1. Have a conversation with Claude
-2. Look for the **📥 Export Full** button in the bottom-right corner
+1. Have a conversation with Grok
+2. Look for the **🤖 Export Grok** button in the bottom-right corner
 3. Click to open the format selection menu
 4. Choose your preferred format:
    - 📝 **Markdown** - For documentation and notes
    - 📄 **Plain Text** - For simple text files
-   - 📊 **JSON Data** - For structured data
+   - 📊 **JSON Data** - For structured data and analysis
 
 Your conversation will automatically download with a timestamped filename including message count.
+
+## 🎭 Grok Mode Support
+
+### Think Mode 🤔
+- Preserves step-by-step reasoning structure
+- Maintains logical flow and analysis steps
+- Exports with clear Think Mode indicators
+
+### Fun Mode 😄
+- Includes personality and tone context
+- Preserves humor and casual interactions
+- Mode indicators show conversation style
+
+### DeepSearch Mode 🔍
+- Maintains real-time data citations
+- Preserves X.com integration context
+- Includes source references and links
 
 ## 🔧 Technical Details
 
 ### Robust Element Detection
-The script uses multiple CSS selectors to find conversation elements, making it resilient to Claude.ai UI updates:
+The script uses multiple detection strategies for Grok's React-based interface:
 ```javascript
-const selectors = [
-    '[data-testid*="message"]',
-    '[class*="message"]', 
-    '.col-start-2',
-    '[role="presentation"] > div > div'
-];
+// Primary strategy - actual Grok DOM structure
+document.querySelectorAll('div[class*="css-146c3p1"]')
+document.querySelectorAll('span[class*="css-1jxf684"]')
+document.querySelectorAll('div[dir="ltr"]')
 ```
 
-### Smart Content Cleaning
-Automatically removes unwanted elements while preserving conversation content:
-- SVG icons and images
-- UI buttons and controls
-- Hidden accessibility elements
-- Navigation elements
-
 ### Auto-Scroll Technology
-Forces complete conversation loading before export:
-- Scrolls to top to load older messages
-- Waits for content to fully load
-- Processes in batches to avoid memory issues
+- Automatically loads complete conversation history
+- Handles Grok's dynamic message loading
+- Processes conversations of any length
 - Shows progress notifications during loading
 
 ### File Naming Convention
-Files are automatically named with timestamps and message counts:
+Files are automatically named with useful information:
 ```
-claude-FULL-conversation-156msgs-2025-05-26T14-30-45.md
+grok-FULL-conversation-156msgs-2025-05-26T14-30-45.md
 ```
 
 ## 🎨 Customization
@@ -111,13 +107,11 @@ The script can be easily customized by modifying the `CONFIG` object:
 
 ```javascript
 const CONFIG = {
-    buttonText: 'Export Full',      // Button text
-    formats: ['txt', 'md', 'json'], // Available formats
-    defaultFormat: 'md',            // Default selection
-    includeTimestamps: true,        // Include timestamps
-    includeMetadata: true,          // Include conversation metadata
-    autoScroll: true,               // Auto-scroll to load full conversation
-    debug: true                     // Enable debug logging
+    buttonText: 'Export Grok',        // Button text
+    formats: ['txt', 'md', 'json'],   // Available formats
+    defaultFormat: 'md',              // Default selection
+    autoScroll: true,                 // Auto-scroll to load full conversation
+    debug: true                       // Enable debug logging
 };
 ```
 
@@ -125,24 +119,38 @@ const CONFIG = {
 
 **Export button not appearing?**
 - Make sure your userscript manager is enabled
-- Check that the script is active on claude.ai
-- Refresh the page
+- Check that the script is active on grok.com or x.com
+- Refresh the page and ensure you're in a conversation
 
 **Empty or incomplete exports?**
-- Ensure you have an active conversation
-- Try scrolling through the full conversation first
-- Check browser console for debug messages
-- Use the "Debug Info" button to see what the script detects
+- Try scrolling through the full conversation manually first
+- Use the "Debug Info" button to check message detection
+- Check browser console for detailed logging information
 
-**UI looks different?**
-- Claude.ai occasionally updates their interface
-- The script uses multiple selectors for compatibility
-- File an issue if exports stop working
+**Mode detection not working?**
+- Grok modes are detected based on content patterns
+- Think Mode: Look for step-by-step reasoning indicators
+- Fun Mode: Detected through tone and emoji usage
+- DeepSearch: Identified by citation patterns
 
-**Auto-scroll not working?**
-- Check console for error messages
-- Try disabling auto-scroll in CONFIG if needed
-- Some conversations may be too long for auto-loading
+## 🆚 Why Enhanced Grok Export?
+
+### First-of-Its-Kind
+- The only comprehensive open-source Grok export solution
+- Built specifically for Grok's unique features and capabilities
+- No competing tools exist in the open-source ecosystem
+
+### Grok-Optimized Features
+- **Mode Preservation** - Unlike generic chat exporters
+- **X Integration Context** - Maintains real-time data sources
+- **Multimodal Ready** - Prepared for Grok's image capabilities
+- **React UI Compatible** - Works with Grok's modern interface
+
+### Privacy-First
+- All processing happens locally in your browser
+- No external servers or data transmission
+- Your conversations remain completely private
+- Open source code for full transparency
 
 ## 🤝 Contributing
 
@@ -151,14 +159,28 @@ Found a bug or want to add a feature? Contributions are welcome!
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
-4. Test with different conversation types
+4. Test with different Grok conversation types
 5. Submit a pull request
+
+## 🔮 Roadmap
+
+### Coming Soon
+- **📄 PDF Export** - Professional report generation using jsPDF
+- **🐦 Share to X** - Direct posting of conversation snippets
+- **🖼️ Image Support** - Export embedded images and generated content
+- **📊 Advanced Analytics** - Conversation insights and statistics
+
+### Future Features
+- **Batch Export** - Export multiple conversations at once
+- **Custom Templates** - Personalized export formatting
+- **Cloud Integration** - Direct export to Google Drive, Dropbox
+- **Advanced Filtering** - Export specific conversation topics or date ranges
 
 ## 📜 Credits
 
-- **Original Script**: [TheAlanK](https://github.com/TheAlanK) & SAPIENT
-- **Enhanced Version**: [iikoshteruu](https://github.com/iikoshteruu?tab=repositories)
-- **Based on**: [Export Claude.Ai v1.1-miniaturized](https://greasyfork.org/scripts/478826)
+- **Enhanced Version**: [iikoshteruu](https://github.com/iikoshteruu)
+- **Inspired by**: Enhanced Claude Export success
+- **Built for**: The growing Grok.ai community
 
 ## 📄 License
 
@@ -166,10 +188,10 @@ MIT License - feel free to modify and distribute!
 
 ## 🔗 Links
 
-- [Original Script on Greasyfork](https://greasyfork.org/scripts/478826)
-- [Claude.ai](https://claude.ai)
-- [Userscript Managers](https://openuserjs.org/about/Userscript-Beginners-HOWTO)
+- [Grok.ai](https://grok.com)
+- [X.com Grok](https://x.com/grok)
+- [Userscript Managers Guide](https://openuserjs.org/about/Userscript-Beginners-HOWTO)
 
 ---
 
-*Made with ❤️ for the Claude.ai community*
+*Made with 🤖 for the Grok.ai community*
