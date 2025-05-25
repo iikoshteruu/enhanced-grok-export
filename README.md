@@ -1,18 +1,33 @@
-# Enhanced-Claude.Ai-Export-v2.0
-A powerful userscript that allows you to export your Claude.ai conversations in multiple formats with improved reliability and features.
 # Enhanced Claude.ai Export Script
+
+[![Version](https://img.shields.io/badge/version-2.1-blue.svg)](https://github.com/iikoshteruu/enhanced-claude-export)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Greasyfork](https://img.shields.io/badge/install-greasyfork-red.svg)](https://greasyfork.org/scripts/YOUR_SCRIPT_ID)
 
 A powerful userscript that allows you to export your Claude.ai conversations in multiple formats with improved reliability and features.
 
 ## 🚀 Features
 
 - **Multiple Export Formats**: Choose from Markdown, Plain Text, or JSON
+- **Auto-Scroll Loading**: Automatically loads full conversation before export
 - **Smart Conversation Detection**: Robust element detection that adapts to UI changes
 - **Speaker Identification**: Distinguishes between human and Claude messages
 - **Clean Output**: Automatically removes UI elements, buttons, and icons
 - **Metadata Inclusion**: Adds timestamps, export date, and message counts
 - **User-Friendly Interface**: Elegant dropdown menu with hover effects
+- **Debug Mode**: Built-in debugging for troubleshooting
+- **Cross-Browser Compatible**: Works with all major userscript managers
 - **Mobile-Friendly**: Compact design that works on small screens
+
+## 📸 Screenshots
+
+### Export Menu
+![Export Menu](examples/export-menu-screenshot.png)
+*Clean, intuitive interface with multiple format options*
+
+### Sample Output
+![Sample Export](examples/sample-output-screenshot.png)
+*Professional formatting with proper conversation structure*
 
 ## 📋 Export Formats
 
@@ -45,14 +60,14 @@ A powerful userscript that allows you to export your Claude.ai conversations in 
 ## 🎯 Usage
 
 1. Have a conversation with Claude
-2. Look for the **📥 Export** button in the bottom-right corner
+2. Look for the **📥 Export Full** button in the bottom-right corner
 3. Click to open the format selection menu
 4. Choose your preferred format:
    - 📝 **Markdown** - For documentation and notes
    - 📄 **Plain Text** - For simple text files
    - 📊 **JSON Data** - For structured data
 
-Your conversation will automatically download with a timestamped filename.
+Your conversation will automatically download with a timestamped filename including message count.
 
 ## 🔧 Technical Details
 
@@ -74,10 +89,17 @@ Automatically removes unwanted elements while preserving conversation content:
 - Hidden accessibility elements
 - Navigation elements
 
+### Auto-Scroll Technology
+Forces complete conversation loading before export:
+- Scrolls to top to load older messages
+- Waits for content to fully load
+- Processes in batches to avoid memory issues
+- Shows progress notifications during loading
+
 ### File Naming Convention
-Files are automatically named with timestamps:
+Files are automatically named with timestamps and message counts:
 ```
-claude-conversation-2025-05-26T14-30-45.md
+claude-FULL-conversation-156msgs-2025-05-26T14-30-45.md
 ```
 
 ## 🎨 Customization
@@ -86,11 +108,13 @@ The script can be easily customized by modifying the `CONFIG` object:
 
 ```javascript
 const CONFIG = {
-    buttonText: 'Export',           // Button text
-    formats: ['txt', md', 'json'],  // Available formats
+    buttonText: 'Export Full',      // Button text
+    formats: ['txt', 'md', 'json'], // Available formats
     defaultFormat: 'md',            // Default selection
     includeTimestamps: true,        // Include timestamps
-    includeMetadata: true           // Include conversation metadata
+    includeMetadata: true,          // Include conversation metadata
+    autoScroll: true,               // Auto-scroll to load full conversation
+    debug: true                     // Enable debug logging
 };
 ```
 
@@ -104,12 +128,18 @@ const CONFIG = {
 **Empty or incomplete exports?**
 - Ensure you have an active conversation
 - Try scrolling through the full conversation first
-- Check browser console for any errors
+- Check browser console for debug messages
+- Use the "Debug Info" button to see what the script detects
 
 **UI looks different?**
 - Claude.ai occasionally updates their interface
 - The script uses multiple selectors for compatibility
 - File an issue if exports stop working
+
+**Auto-scroll not working?**
+- Check console for error messages
+- Try disabling auto-scroll in CONFIG if needed
+- Some conversations may be too long for auto-loading
 
 ## 🤝 Contributing
 
