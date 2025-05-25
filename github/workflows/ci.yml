@@ -1,0 +1,182 @@
+name: Enhanced Claude Export CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Run weekly to check for link rot
+    - cron: '0 0 * * 0'
+
+jobs:
+  validate:
+    name: Validate Repository
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Cache dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+          
+    - name: Install dependencies
+      run: |
+        npm install -g jshint markdownlint-cli markdown-link-check
+        
+    - name: Validate userscript syntax
+      run: |
+        if [ -f "enhanced-claude-export.user.js" ]; then
+          echo "Validating userscript JavaScript syntax..."
+          jshint enhanced-claude-export.user.js --esversion=8 --browser --undef --unused || true
+        else
+          echo "⚠️ Userscript file not found, skipping syntax check"
+        fi
+        
+    - name: Validate JSON files
+      run: |
+        echo "Validating JSON files..."
+        for file in $(find . -name "*.json" -not -path "./node_modules/*"); do
+          echo "Checking $file..."
+          python -m json.tool "$file" > /dev/null
+        done
+        
+    - name: Validate Markdown files
+      run: |
+        echo "Validating Markdown syntax..."
+        markdownlint --config .markdownlint.json . || true
+        
+    - name: Check for required files
+      run: |
+        echo "Checking for required repository files..."
+        required_files=("README.md" "LICENSE" "CHANGELOG.md" "CONTRIBUTING.md" "SECURITY.md")
+        missing_files=()
+        
+        for file in "${required_files[@]}"; do
+          if [ ! -f "$file" ]; then
+            missing_files+=("$file")
+          fi
+        done
+        
+        if [ ${#missing_files[@]} -eq 0 ]; then
+          echo "✅ All required files present"
+        else
+          echo "❌ Missing required files: ${missing_files[*]}"
+          exit 1
+        fi
+        
+    - name: Check links in documentation
+      run: |
+        echo "Checking links in Markdown files..."
+        find . -name "*.md" -not -path "./node_modules/*" | xargs markdown-link-check --config .markdown-link-check.json
+        
+    - name: Validate userscript headers
+      run: |
+        if [ -f "enhanced-claude-export.user.js" ]; then
+          echo "Validating userscript metadata headers..."
+          
+          # Check for required userscript headers
+          required_headers=("@name" "@description" "@version" "@author" "@match" "@grant")
+          missing_headers=()
+          
+          for header in "${required_headers[@]}"; do
+            if ! grep -q "// $header" enhanced-claude-export.user.js; then
+              missing_headers+=("$header")
+            fi
+          done
+          
+          if [ ${#missing_headers[@]} -eq 0 ]; then
+            echo "✅ All required userscript headers present"
+          else
+            echo "❌ Missing userscript headers: ${missing_headers[*]}"
+            exit 1
+          fi
+          
+          # Extract and display version
+          version=$(grep "// @version" enhanced-claude-export.user.js | head -1 | sed 's/.*@version\s*//')
+          echo "📦 Userscript version: $version"
+        fi
+        
+    - name: Security scan
+      run: |
+        echo "Running basic security checks..."
+        
+        # Check for potential security issues
+        if [ -f "enhanced-claude-export.user.js" ]; then
+          echo "Checking for potential security issues..."
+          
+          # Check for dangerous functions
+          dangerous_patterns=("eval(" "innerHTML" "document.write" "setTimeout.*string" "setInterval.*string")
+          
+          for pattern in "${dangerous_patterns[@]}"; do
+            if grep -q "$pattern" enhanced-claude-export.user.js; then
+              echo "⚠️ Potential security issue found: $pattern"
+            fi
+          done
+          
+          # Check for hardcoded credentials
+          if grep -iE "(password|secret|key|token).*=" enhanced-claude-export.user.js; then
+            echo "⚠️ Potential hardcoded credentials found"
+          fi
+          
+          echo "✅ Security scan completed"
+        fi
+        
+    - name: Generate repository stats
+      run: |
+        echo "📊 Repository Statistics:"
+        echo "- Total files: $(find . -type f -not -path "./.git/*" | wc -l)"
+        echo "- Markdown files: $(find . -name "*.md" -not -path "./.git/*" | wc -l)"
+        echo "- JavaScript files: $(find . -name "*.js" -not -path "./.git/*" | wc -l)"
+        echo "- JSON files: $(find . -name "*.json" -not -path "./.git/*" | wc -l)"
+        
+        if [ -f "enhanced-claude-export.user.js" ]; then
+          echo "- Userscript size: $(wc -c < enhanced-claude-export.user.js) bytes"
+          echo "- Userscript lines: $(wc -l < enhanced-claude-export.user.js) lines"
+        fi
+        
+  release-check:
+    name: Release Readiness Check
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Check if ready for release
+      run: |
+        echo "🚀 Checking release readiness..."
+        
+        # Check version consistency
+        if [ -f "enhanced-claude-export.user.js" ]; then
+          script_version=$(grep "// @version" enhanced-claude-export.user.js | head -1 | sed 's/.*@version\s*//')
+          
+          if [ -f "CHANGELOG.md" ]; then
+            changelog_version=$(grep -m1 "## \[" CHANGELOG.md | sed 's/.*\[\(.*\)\].*/\1/')
+            
+            if [ "$script_version" = "$changelog_version" ]; then
+              echo "✅ Version consistency check passed: $script_version"
+            else
+              echo "❌ Version mismatch - Script: $script_version, Changelog: $changelog_version"
+            fi
+          fi
+        fi
+        
+        echo "📋 Release checklist:"
+        echo "- [ ] Version updated in userscript"
+        echo "- [ ] Changelog updated"
+        echo "- [ ] Documentation updated"
+        echo "- [ ] All tests passing"
+        echo "- [ ] Security review completed"
