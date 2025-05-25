@@ -124,7 +124,7 @@ Found a bug or want to add a feature? Contributions are welcome!
 ## 📜 Credits
 
 - **Original Script**: [TheAlanK](https://github.com/TheAlanK) & SAPIENT
-- **Enhanced Version**: [Your GitHub Username]
+- **Enhanced Version**: [iikoshteruu](https://github.com/iikoshteruu?tab=repositories)
 - **Based on**: [Export Claude.Ai v1.1-miniaturized](https://greasyfork.org/scripts/478826)
 
 ## 📄 License
