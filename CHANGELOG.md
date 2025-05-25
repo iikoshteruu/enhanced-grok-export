@@ -27,7 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v1.0.0
 - Fixed conversation truncation issues
 - Resolved problems with n8n-style data processing
 - Improved text visibility in export menu (white text on dark backgrounds)
-- Better handling of grok.com UI changes
+- Better handling of x.com/i/grok UI changes
 
 ## [1.0.0] - 2025-05-25
 
@@ -46,7 +46,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v1.0.0
 - Enhanced error handling and validation
 
 ### Fixed
-- Resolved element detection issues with grok.com updates
+- Resolved element detection issues with x.com/i/grok updates
 - Fixed export failures on long conversations
 - Improved text cleaning and formatting
 
