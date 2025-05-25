@@ -75,6 +75,15 @@ Structured data format with complete Grok conversation metadata:
 
 Your conversation will automatically download with a descriptive filename including message count and timestamp.
 
+## 🐛 Known Issues & Fixes
+
+For current bugs and their resolutions, see [BUGS.md](BUGS.md).
+
+To report new bugs:
+1. Check [existing issues](https://github.com/iikoshteruu/enhanced-grok-export/issues)
+2. Use the "🔍 Debug Info" button for troubleshooting
+3. [Create a new issue](https://github.com/iikoshteruu/enhanced-grok-export/issues/new) with details
+
 ## 🎭 Grok Mode Support
 
 ### 🤔 Think Mode
