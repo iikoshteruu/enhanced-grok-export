@@ -45,7 +45,7 @@
 
 ### **2. Install Enhanced Grok Export**
 - **[Click here to install](enhanced-grok-export.user.js)** (GitHub direct)
-- **[Install from Greasyfork](https://greasyfork.org/scripts/YOUR_SCRIPT_ID)** (Community platform)
+- **- **[Install from Greasyfork](https://greasyfork.org/en/scripts/537266-enhanced-grok-export-v2-4)** (Community platform)
 - Or copy the script code directly into your userscript manager
 
 ### **3. Start Using**
@@ -219,7 +219,7 @@ Unlike generic chat exporters, Enhanced Grok Export provides:
 
 ## 📜 Credits
 
-- **🎯 Lead Developer:** [iikoshteruu](https://github.com/iikoshteruu) - Complete design and implementation
+- **🎯 Developer:** [iikoshteruu](https://github.com/iikoshteruu) - Complete design and implementation
 - **💡 Inspiration:** Community need for Grok conversation preservation and analysis
 - **🤝 Built for:** The growing X.com Grok community and AI conversation enthusiasts
 - **🙏 Special Thanks:** Beta testers, issue reporters, and the open-source community
@@ -253,6 +253,7 @@ See the [LICENSE](LICENSE) file for full legal details.
 - **🐦 X.com:** [x.com](https://x.com) - Social platform hosting Grok
 - **📚 Userscript Guide:** [Userscript Beginners HOWTO](https://openuserjs.org/about/Userscript-Beginners-HOWTO)
 - **🔧 Tampermonkey:** [tampermonkey.net](https://www.tampermonkey.net/) - Recommended userscript manager
+- **🍴 Greasyfork:** [Enhanced Grok Export](https://greasyfork.org/en/scripts/537266-enhanced-grok-export-v2-4) - Community userscript platform
 - **🐛 Report Issues:** [GitHub Issues](https://github.com/iikoshteruu/enhanced-grok-export/issues) - Bug reports and feature requests
 - **💬 Discussions:** [GitHub Discussions](https://github.com/iikoshteruu/enhanced-grok-export/discussions) - Community conversation
 - **📋 Changelog:** [CHANGELOG.md](CHANGELOG.md) - Complete version history
