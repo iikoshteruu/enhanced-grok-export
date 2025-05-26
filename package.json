@@ -70,6 +70,8 @@
     "supportURL": "https://github.com/iikoshteruu/enhanced-grok-export/issues",
     "homepageURL": "https://github.com/iikoshteruu/enhanced-grok-export",
     "downloadURL": "https://github.com/iikoshteruu/enhanced-grok-export/raw/main/enhanced-grok-export.user.js",
+    "greasyforkURL": "https://greasyfork.org/en/scripts/537266-enhanced-grok-export-v2-4",
+    "greasyforkID": "537266"
     "updateURL": "https://github.com/iikoshteruu/enhanced-grok-export/raw/main/enhanced-grok-export.user.js",
     "grant": "none",
     "matches": [
