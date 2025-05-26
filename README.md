@@ -2,7 +2,7 @@
 
 [![Version](https://img.shields.io/badge/version-2.4.0-blue.svg)](https://github.com/iikoshteruu/enhanced-grok-export)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Greasyfork](https://img.shields.io/badge/install-greasyfork-red.svg)](https://greasyfork.org/scripts/YOUR_SCRIPT_ID)
+[![Greasyfork](https://img.shields.io/badge/install-greasyfork-red.svg)]([![Greasyfork](https://greasyfork.org/en/scripts/537266-enhanced-grok-export-v2-4)
 [![Production Ready](https://img.shields.io/badge/status-production%20ready-brightgreen.svg)](https://github.com/iikoshteruu/enhanced-grok-export/releases/latest)
 
 **The first comprehensive open-source userscript for exporting Grok conversations with intelligent speaker detection, multi-format support, and seamless X.com integration.**
