@@ -16,6 +16,11 @@ This guide provides detailed installation instructions for the Enhanced grok Exp
 3. Create new script or import file
 4. Paste the code and save
 
+### Option 3: Install from Greasyfork
+1. Visit [Enhanced Grok Export on Greasyfork](https://greasyfork.org/en/scripts/537266-enhanced-grok-export-v2-4)
+2. Click "Install this script"
+3. Confirm installation in your userscript manager
+
 ## 🔧 Userscript Manager Installation
 
 ### Tampermonkey (Recommended)
