@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.4.1] - 2025-01-11
+
+### 🔧 Fixed - CRITICAL SELECTOR UPDATE
+- **CRITICAL:** Fixed conversation detection failure caused by Grok's UI migration from CSS-in-JS to Tailwind CSS
+- Updated DOM selectors from legacy `css-xxxxxx` class patterns to new `.message-bubble` and `.response-content-markdown` classes
+- Added `.action-buttons` to element cleanup to prevent button text from appearing in exports
+
+### 🎯 Changed
+- Primary detection strategy now uses Tailwind CSS class selectors
+- Enhanced speaker detection with CSS class-based identification (`response-content-markdown`, `bg-surface-l1`)
+- Legacy CSS-in-JS selectors retained as fallback for backwards compatibility
+
+### 📝 Technical
+- Strategy 1: `.message-bubble` selector (primary)
+- Strategy 2: `.response-content-markdown` selector
+- Strategy 3: Legacy `css-146c3p1` selector (fallback)
+- Strategy 4: `dir="ltr"` selector (last resort)
+
+---
+
 ## [2.4.0] - 2025-05-26
 
 ### 🔧 Fixed - FINAL SPEAKER DETECTION BALANCE

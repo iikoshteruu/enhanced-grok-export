@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Enhanced Grok Export v2.4
 // @description  Export Grok conversations with improved detection and working PDF
-// @version      2.4.0
+// @version      2.4.1
 // @author       iikoshteruu
 // @grant        none
 // @match        *://grok.com/*
@@ -15,7 +15,7 @@
 (function() {
     'use strict';
 
-    console.log('Enhanced Grok Export v2.2 starting...');
+    console.log('Enhanced Grok Export v2.4.1 starting...');
 
     // Configuration
     const CONFIG = {
@@ -37,7 +37,7 @@
 
     function debugLog(message, data = null) {
         if (CONFIG.debug) {
-            console.log('[Grok Export v2.2]', message, data || '');
+            console.log('[Grok Export v2.4.1]', message, data || '');
         }
     }
 
@@ -89,22 +89,25 @@
         const messages = [];
 
         const strategies = [
+            // Strategy 1: Find all message bubbles (Tailwind classes - Jan 2025)
+            () => {
+                const messageBubbles = document.querySelectorAll('.message-bubble');
+                debugLog(`Found ${messageBubbles.length} message bubbles`);
+                return Array.from(messageBubbles);
+            },
+            // Strategy 2: Find markdown response content
+            () => {
+                const responses = document.querySelectorAll('.response-content-markdown');
+                debugLog(`Found ${responses.length} response-content-markdown elements`);
+                return Array.from(responses).map(el => el.closest('.message-bubble') || el);
+            },
+            // Strategy 3: Legacy CSS-in-JS selectors (kept for backwards compatibility)
             () => {
                 const messageContainers = document.querySelectorAll('div[class*="css-146c3p1"]');
                 debugLog(`Found ${messageContainers.length} containers with css-146c3p1`);
                 return Array.from(messageContainers);
             },
-            () => {
-                const contentSpans = document.querySelectorAll('span[class*="css-1jxf684"]');
-                debugLog(`Found ${contentSpans.length} content spans with css-1jxf684`);
-                return Array.from(contentSpans).map(span => {
-                    let parent = span.parentElement;
-                    while (parent && !parent.classList.toString().includes('css-146c3p1')) {
-                        parent = parent.parentElement;
-                    }
-                    return parent;
-                }).filter(Boolean);
-            },
+            // Strategy 4: Fallback to dir="ltr"
             () => {
                 const ltrDivs = document.querySelectorAll('div[dir="ltr"]');
                 debugLog(`Found ${ltrDivs.length} divs with dir='ltr'`);
@@ -148,7 +151,7 @@
 
                 const unwanted = clone.querySelectorAll(
                     'svg, button, input, select, nav, header, footer, script, style, ' +
-                    '[aria-hidden="true"], [class*="icon"], [class*="button"]'
+                    '[aria-hidden="true"], [class*="icon"], [class*="button"], .action-buttons'
                 );
                 unwanted.forEach(el => el.remove());
 
@@ -203,6 +206,27 @@
 
         let grokScore = 0;
         let humanScore = 0;
+
+        // 0. CHECK FOR GROK-SPECIFIC CSS CLASSES (Most reliable for new UI)
+        if (element.querySelector('.response-content-markdown') ||
+            element.classList.contains('response-content-markdown')) {
+            grokScore += 5;
+            debugInfo.reasoning.push('Has response-content-markdown class (GROK)');
+        }
+
+        // Check for Grok response indicators in class names
+        if (element.className.includes('bg-surface-l1') ||
+            element.querySelector('[class*="bg-surface-l1"]')) {
+            grokScore += 3;
+            debugInfo.reasoning.push('Has bg-surface-l1 styling (likely GROK)');
+        }
+
+        // Human messages typically have different styling (no border, different bg)
+        if (element.className.includes('max-w-none') &&
+            !element.className.includes('bg-surface-l1')) {
+            humanScore += 3;
+            debugInfo.reasoning.push('Has max-w-none without bg-surface-l1 (likely HUMAN)');
+        }
 
         // 1. MESSAGE LENGTH ANALYSIS (Most reliable indicator)
         if (text.length > 400) {
@@ -379,7 +403,7 @@
             content += `Generated: ${new Date().toLocaleString()}\n`;
             content += `Total Messages: ${messages.length}\n`;
             content += `Source URL: ${window.location.href}\n`;
-            content += `Export Version: Enhanced Grok Export v2.2\n\n`;
+            content += `Export Version: Enhanced Grok Export v2.4.1\n\n`;
 
             // Statistics section
             const stats = {
@@ -625,7 +649,7 @@
         md += `**Exported:** ${new Date().toLocaleString()}  \n`;
         md += `**Total Messages:** ${messages.length}  \n`;
         md += `**URL:** ${window.location.href}  \n`;
-        md += `**Export Method:** Enhanced Grok Export v2.2\n\n`;
+        md += `**Export Method:** Enhanced Grok Export v2.4.1\n\n`;
         md += `---\n\n`;
 
         messages.forEach(msg => {
@@ -641,7 +665,7 @@
         const exportData = {
             exportDate: new Date().toISOString(),
             exportTimestamp: Date.now(),
-            exportVersion: '2.2.0',
+            exportVersion: '2.4.1',
             platform: 'grok',
             messageCount: messages.length,
             url: window.location.href,
@@ -992,7 +1016,7 @@
 
     // Initialize the script
     function init() {
-        debugLog('Initializing Enhanced Grok Export v2.2...');
+        debugLog('Initializing Enhanced Grok Export v2.4.1...');
 
         // Remove existing elements
         const existingButton = document.getElementById('grok-export-button');
@@ -1015,9 +1039,9 @@
             }
         });
 
-        debugLog('Enhanced Grok Export v2.2 initialized successfully!');
-        console.log('%c✅ Enhanced Grok Export v2.2 Ready!', 'color: green; font-weight: bold;');
-        console.log('%c🔧 Fixed: Content-Based Speaker Detection & PDF Export', 'color: blue; font-weight: bold;');
+        debugLog('Enhanced Grok Export v2.4.1 initialized successfully!');
+        console.log('%c✅ Enhanced Grok Export v2.4.1 Ready!', 'color: green; font-weight: bold;');
+        console.log('%c🔧 Updated: New Tailwind CSS selectors for Jan 2025', 'color: blue; font-weight: bold;');
     }
 
     // Wait for page to be ready

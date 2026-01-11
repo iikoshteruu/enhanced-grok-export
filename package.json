@@ -1,6 +1,6 @@
 {
   "name": "enhanced-grok-export",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "description": "The first comprehensive open-source userscript for exporting Grok conversations with multi-format support, intelligent speaker detection, and X.com integration",
   "main": "enhanced-grok-export.user.js",
   "keywords": [
@@ -78,7 +78,7 @@
       "*://grok.com/*",
       "*://x.com/*"
     ],
-    "version": "2.4.0"
+    "version": "2.4.1"
   },
   "funding": {
     "type": "github",
@@ -106,8 +106,8 @@
   },
   "statistics": {
     "development_time": "2 days",
-    "versions_released": 6,
-    "bugs_resolved": 3,
+    "versions_released": 7,
+    "bugs_resolved": 4,
     "speaker_accuracy": "90%",
     "export_success_rate": "100%",
     "supported_formats": 5

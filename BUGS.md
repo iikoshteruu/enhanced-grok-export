@@ -14,6 +14,55 @@ Found a bug? Please:
 
 ## ✅ **Resolved Issues - Complete Development Journey**
 
+### 🐛 **Issue #4: Conversation Detection Failure (January 2025)**
+**Versions Affected:** v2.4.0
+**Status:** ✅ **RESOLVED in v2.4.1**
+**Resolution Date:** 2025-01-11
+**Severity:** Critical - Complete functionality failure
+
+#### **Problem Description**
+Users reported "No conversation found" error when attempting to export. The export button appeared correctly but no messages were detected.
+
+#### **Root Cause**
+Grok.com migrated their frontend from CSS-in-JS (generating dynamic class names like `css-146c3p1`) to Tailwind CSS (using semantic class names like `message-bubble`, `response-content-markdown`).
+
+**Diagnostic Results:**
+```javascript
+// Old selectors (broken - January 2025)
+document.querySelectorAll('div[class*="css-146c3p1"]')  // 0 results
+document.querySelectorAll('span[class*="css-1jxf684"]') // 0 results
+document.querySelectorAll('div[dir="ltr"]')             // 1 result (insufficient)
+```
+
+#### **Solution Implementation (v2.4.1)**
+Updated detection strategies to use new Tailwind CSS classes:
+
+```javascript
+// New selectors (working)
+document.querySelectorAll('.message-bubble')              // All messages
+document.querySelectorAll('.response-content-markdown')   // Grok responses
+```
+
+**Additional Improvements:**
+- Added CSS class-based speaker detection using `bg-surface-l1` styling
+- Retained legacy selectors as fallback for any remaining CSS-in-JS pages
+- Added `.action-buttons` to cleanup list to prevent button text in exports
+
+#### **Lesson Learned**
+CSS-in-JS class names are inherently unstable across deployments. Future versions should prioritize:
+- Semantic class names (e.g., `.message-bubble`)
+- Data attributes (e.g., `[data-testid="message"]`)
+- ARIA roles (e.g., `[role="article"]`)
+- Structural patterns over generated class names
+
+#### **Verification**
+- ✅ Message bubbles detected correctly
+- ✅ Speaker detection working with new classes
+- ✅ All export formats functioning
+- ✅ Tested across Chrome, Firefox, Edge
+
+---
+
 ### 🐛 **Issue #1: Critical Speaker Detection Imbalance**
 **Versions Affected:** v1.0 - v2.3  
 **Status:** ✅ **RESOLVED in v2.4**  

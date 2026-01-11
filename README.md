@@ -1,6 +1,6 @@
 # Enhanced Grok Export
 
-[![Version](https://img.shields.io/badge/version-2.4.0-blue.svg)](https://github.com/iikoshteruu/enhanced-grok-export)
+[![Version](https://img.shields.io/badge/version-2.4.1-blue.svg)](https://github.com/iikoshteruu/enhanced-grok-export)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Greasyfork](https://img.shields.io/badge/install-greasyfork-red.svg)]([![Greasyfork](https://greasyfork.org/en/scripts/537266-enhanced-grok-export-v2-4)
 [![Production Ready](https://img.shields.io/badge/status-production%20ready-brightgreen.svg)](https://github.com/iikoshteruu/enhanced-grok-export/releases/latest)
@@ -225,8 +225,8 @@ Unlike generic chat exporters, Enhanced Grok Export provides:
 - **🙏 Special Thanks:** Beta testers, issue reporters, and the open-source community
 
 ### **Development Journey**
-- **6 versions** released over 2 days of intensive development
-- **3 critical bugs** systematically identified and resolved
+- **7 versions** released with continuous improvements
+- **4 critical bugs** systematically identified and resolved
 - **Speaker detection accuracy** evolved from 15% to 90% through iterative refinement
 - **Community-driven** improvements based on real user feedback and testing
 
@@ -261,9 +261,11 @@ See the [LICENSE](LICENSE) file for full legal details.
 
 ## 🏆 Project Status
 
-### **Current Version: 2.4.0 - Production Ready ✅**
+### **Current Version: 2.4.1 - Production Ready ✅**
 
 **Enhanced Grok Export has achieved production-ready status with all major functionality working reliably:**
+
+> **v2.4.1 Update (January 2025):** Fixed critical conversation detection failure caused by Grok's migration to Tailwind CSS. All selectors updated for the new UI.
 
 - **✅ Speaker Detection:** 90% accuracy with realistic conversation distribution
 - **✅ Export Formats:** 100% success rate across all 5 export options  
