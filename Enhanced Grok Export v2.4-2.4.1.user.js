@@ -207,25 +207,20 @@
         let grokScore = 0;
         let humanScore = 0;
 
-        // 0. CHECK FOR GROK-SPECIFIC CSS CLASSES (Most reliable for new UI)
-        if (element.querySelector('.response-content-markdown') ||
-            element.classList.contains('response-content-markdown')) {
-            grokScore += 5;
-            debugInfo.reasoning.push('Has response-content-markdown class (GROK)');
-        }
-
-        // Check for Grok response indicators in class names
+        // 0. CHECK FOR CSS CLASSES (Most reliable for new Tailwind UI - Jan 2025)
+        // Human messages have bg-surface-l1 background styling
+        // Grok messages have max-w-none and NO bg-surface-l1
         if (element.className.includes('bg-surface-l1') ||
             element.querySelector('[class*="bg-surface-l1"]')) {
-            grokScore += 3;
-            debugInfo.reasoning.push('Has bg-surface-l1 styling (likely GROK)');
+            humanScore += 5;
+            debugInfo.reasoning.push('Has bg-surface-l1 styling (HUMAN)');
         }
 
-        // Human messages typically have different styling (no border, different bg)
+        // Grok messages have max-w-none without the bg-surface background
         if (element.className.includes('max-w-none') &&
             !element.className.includes('bg-surface-l1')) {
-            humanScore += 3;
-            debugInfo.reasoning.push('Has max-w-none without bg-surface-l1 (likely HUMAN)');
+            grokScore += 5;
+            debugInfo.reasoning.push('Has max-w-none without bg-surface-l1 (GROK)');
         }
 
         // 1. MESSAGE LENGTH ANALYSIS (Most reliable indicator)
