@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Enhanced Grok Export v2.4
 // @description  Export Grok conversations with improved detection and working PDF
-// @version      2.4.1
+// @version      2.4.2
 // @author       iikoshteruu
 // @grant        none
 // @match        *://grok.com/*
@@ -15,7 +15,7 @@
 (function() {
     'use strict';
 
-    console.log('Enhanced Grok Export v2.4.1 starting...');
+    console.log('Enhanced Grok Export v2.4.2 starting...');
 
     // Configuration
     const CONFIG = {
