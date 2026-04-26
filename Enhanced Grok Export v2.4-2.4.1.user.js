@@ -724,6 +724,16 @@
         }
     }
 
+    // Get meaningful conversation title for filename
+    function getConversationTitle() {
+        const pageTitle = document.title?.replace(/[^a-zA-Z0-9\s], '').trim():
+        if (pageTitle && pageTitle !== 'Grok') return pageTitle.slice(0, 50);
+        const messages = getConversationData();
+        const firstHuman = messages.find(m => m.speaker === 'Human');
+        if (firstHuman) return firstHuman.content.slice(0, 50).replace(/[^a-zA-Z0-9\s]/g, '').trim();
+        return 'untitled';
+    }
+
     // Export conversation with full loading
     async function exportConversation(format) {
         if (isExporting) {
@@ -757,29 +767,30 @@
             }
 
             const timestamp = new Date().toISOString().slice(0, 19).replace(/:/g, '-');
+            const title = getConversationTitle().replace(/\s+/g, '-').toLowerCase();
             let filename, content, mimeType;
 
             switch (format) {
                 case 'md':
                     content = formatAsMarkdown(messages);
                     mimeType = 'text/markdown';
-                    filename = `grok-FULL-conversation-${messages.length}msgs-${timestamp}.md`;
+                    filename = `grok-${title}-${timestamp}.md`;
                     break;
                 case 'json':
                     content = formatAsJSON(messages);
                     mimeType = 'application/json';
-                    filename = `grok-FULL-conversation-${messages.length}msgs-${timestamp}.json`;
+                    filename = `grok-${title}-${timestamp}.json`;
                     break;
                 case 'pdf':
                     showNotification('📄 Generating document...', 0);
                     content = await formatAsPDF(messages);
                     mimeType = 'text/plain';
-                    filename = `grok-FULL-conversation-${messages.length}msgs-${timestamp}.txt`;
+                    filename = `grok-${title}-${timestamp}.txt`;
                     break;
                 default:
                     content = formatAsText(messages);
                     mimeType = 'text/plain';
-                    filename = `grok-FULL-conversation-${messages.length}msgs-${timestamp}.txt`;
+                    filename = `grok-${title}-${timestamp}.txt`;
             }
 
             const success = downloadFile(content, filename, mimeType);
