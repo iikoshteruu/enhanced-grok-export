@@ -726,7 +726,7 @@
 
     // Get meaningful conversation title for filename
     function getConversationTitle() {
-        const pageTitle = document.title?.replace(/[^a-zA-Z0-9\s], '').trim():
+        const pageTitle = document.title?.replace(/[^a-zA-Z0-9\s]/g, '').trim();
         if (pageTitle && pageTitle !== 'Grok') return pageTitle.slice(0, 50);
         const messages = getConversationData();
         const firstHuman = messages.find(m => m.speaker === 'Human');
