@@ -774,23 +774,23 @@
                 case 'md':
                     content = formatAsMarkdown(messages);
                     mimeType = 'text/markdown';
-                    filename = `grok-${title}-${timestamp}.md`;
+                    filename = `grok-${title}-${messages.length}msgs-${timestamp}.md`;
                     break;
                 case 'json':
                     content = formatAsJSON(messages);
                     mimeType = 'application/json';
-                    filename = `grok-${title}-${timestamp}.json`;
+                    filename = `grok-${title}-${messages.length}msgs-${timestamp}.json`;
                     break;
                 case 'pdf':
                     showNotification('📄 Generating document...', 0);
                     content = await formatAsPDF(messages);
                     mimeType = 'text/plain';
-                    filename = `grok-${title}-${timestamp}.txt`;
+                    filename = `grok-${title}-${messages.length}msgs-${timestamp}.txt`;
                     break;
                 default:
                     content = formatAsText(messages);
                     mimeType = 'text/plain';
-                    filename = `grok-${title}-${timestamp}.txt`;
+                    filename = `grok-${title}-${messages.length}msgs-${timestamp}.txt`;
             }
 
             const success = downloadFile(content, filename, mimeType);
